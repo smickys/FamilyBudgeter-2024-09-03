@@ -1,11 +1,20 @@
 const express = require('express')
+const dotenv = require('dotenv')
+const cors = require('cors')
+
 const app = express()
-const port = 3000
+const port = 16108
+
+dotenv.config()
+
+app.use(cors({ origin: process.env.FRONTEND }))
+app.use(express.json())
+
 
 app.get('/', (req, res) => {
-  res.send('Hello World!')
+  res.send('Family Budgeter')
 })
 
 app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`)
+  console.log(`Family Budgeter app listening on port ${port}`)
 })
