@@ -10,6 +10,7 @@ dotenv.config()
 app.use(cors({ origin: process.env.FRONTEND }))
 app.use(express.json())
 
+const db = require('./database.js')
 
 app.get('/', (req, res) => {
   res.send('Family Budgeter')
